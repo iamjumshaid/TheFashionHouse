@@ -18,13 +18,11 @@
     <link rel="shortcut icon" href="title.png">
     @show
 </head>
-
 <body style="background: url('main_bg.jpg') no-repeat center center fixed;
 -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -68,13 +66,13 @@
                                         <a href="/boutique/add/purchase">Add Purchases</a>
                                     </li>
                                     <li>
-                                        <a href="#">View Purchases</a>
+                                        <a href="/boutique/view/purchase">View Purchases</a>
                                     </li>
                                     <li>
-                                        <a href="#">Add Products</a>
+                                        <a href="/boutique/add/products">Add Products</a>
                                     </li>
                                     <li>
-                                        <a href="#">Boutique Reports</a>
+                                        <a href="/boutique/view/reports">Boutique Reports</a>
                                     </li>
                                 </ul>
                             </div>
@@ -87,13 +85,13 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="#">Add Member</a>
+                                        <a href="/gym/add/member">Add Member</a>
                                     </li>
                                     <li>
-                                        <a href="#">View Member</a>
+                                        <a href="/gym/view/member">View Member</a>
                                     </li>
                                     <li>
-                                        <a href="#">Gym Reports</a>
+                                        <a href="/gym/view/reports">Gym Reports</a>
                                     </li>
                                 </ul>
                             </div>
@@ -106,13 +104,13 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="#">Add Apointment</a>
+                                        <a href="/parlor/add/appointment">Add Apointment</a>
                                     </li>
                                     <li>
-                                        <a href="#">View Bookings</a>
+                                        <a href="/parlor/view/bookings">View Bookings</a>
                                     </li>
                                     <li>
-                                        <a href="#">Parlor Reports</a>
+                                        <a href="/parlor/view/reports">Parlor Reports</a>
                                     </li>
                                 </ul>
                             </div>
