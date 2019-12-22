@@ -1,45 +1,52 @@
 const $tableID = $('#table');
 const $BTN = $('#export-btn');
 const $EXPORT = $('#export');
-
-const newTr = `
-<tr class="hide">
-<td class="pt-3-half">
-<input list="products" name="browser" placeholder="Product Name">
-                                    <datalist id="products">
-                                        <option value="Lipstick">
-                                        <option value="Lip Color">
-                                        <option value="Bag">
-                                        <option value="Dress">
-                                    </datalist>
-</td>
-<td class="pt-3-half">
-<input style="background-color: rgba(0,0,0,0);" type="text" placeholder="Product Code" name="prod_code">
-</td>
-<td class="pt-3-half">
-<input style="background-color: rgba(0,0,0,0);" type="number" placeholder="Product Quantity" name="prod_quantity">
-</td>
-<td class="pt-3-half">
-<input style="background-color: rgba(0,0,0,0);" type="text" placeholder="Product Size" name="prod_size">
-</td>
-  <td>
-    <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light">Remove</button></span>
-  </td>
-</tr>`;
+var count2 = 0;
 
 $('.table-add').on('click', 'i', () => {
 
+
+    count2++;
+    newTr = `
+    <tr>
+    <td class="pt-3-half">
+    <input list="products" class="prod_name" id="prod_name` + count2 + `" name="prod_name[]" placeholder="Product Name" onchange="getProduct(this)">
+    <datalist id="products" class="prod_name">
+    </datalist>
+    
+    <?php csrf_field() ?>
+    </td>
+    <td class="pt-3-half">
+        <input type="text" class="prod_code" placeholder="Product Code" readonly name="prod_code[]" id="prod_code_` + count2 + `">
+    </td>
+    <td class="pt-3-half">
+        <input type="text" placeholder="Product Category" name="prod_category[]" readonly  id="prod_category_` + count2 + `">
+    </td>
+    <td class="pt-3-half">
+        <input type="text" placeholder="Product Price" name="prod_price[]" readonly id="prod_price_` + count2 + `">
+    </td>
+    <td class="pt-3-half">
+        <input type="text" placeholder="Product Quantity" onchange="getId(this,this.value)" name="prod_quantity[]" id="prod_quantity_` + count2 + `">
+    </td>
+    <td class="pt-3-half">
+        <input type="text" placeholder="Total Price"  name="total_price[]" readonly id="total_price_` + count2 + `">
+    </td>
+    <td>
+        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+    </td>
+</tr>`;
+
+    //  alert(newTr);
     const $clone = $tableID.find('tbody').last().clone(true).removeClass('hide table-line');
 
     if ($tableID.find('tbody tr').length === 0) {
 
         $('tbody').append(newTr);
-    }
+    } else {
 
-    // $tableID.find('table').append($clone);
-    else {
         $('tbody').append(newTr);
     }
+
 
 });
 
@@ -93,8 +100,64 @@ $BTN.on('click', () => {
         });
 
         data.push(h);
+
+        count++;
     });
 
     // Output the result
     $EXPORT.text(JSON.stringify(data));
+});
+
+
+
+
+
+
+
+
+/**************KEY EVENTS */
+document.addEventListener('keypress', function(event) {
+    if (event.code == 'KeyN') {
+        count2++;
+        newTr = `
+<tr>
+<td class="pt-3-half">
+<input list="products" class="prod_name" id="prod_name` + count2 + `" name="prod_name[]" placeholder="Product Name" onchange="getProduct(this)">
+<datalist id="products" class="prod_name">
+</datalist>
+
+<?php csrf_field() ?>
+</td>
+<td class="pt-3-half">
+    <input type="text" class="prod_code" placeholder="Product Code" name="prod_code[]" id="prod_code_` + count2 + `">
+</td>
+<td class="pt-3-half">
+    <input type="text" placeholder="Product Category" name="prod_category[]" id="prod_category_` + count2 + `">
+</td>
+<td class="pt-3-half">
+    <input type="text" placeholder="Product Price" name="prod_price[]" id="prod_price_` + count2 + `">
+</td>
+<td class="pt-3-half">
+    <input type="text" placeholder="Product Quantity" onchange="getId(this,this.value)" name="prod_quantity[]" id="prod_quantity_` + count2 + `">
+</td>
+<td class="pt-3-half">
+    <input type="text" placeholder="Total Price"  name="total_price[]" id="total_price_` + count2 + `">
+</td>
+<td>
+    <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+</td>
+</tr>`;
+
+        //  alert(newTr);
+        const $clone = $tableID.find('tbody').last().clone(true).removeClass('hide table-line');
+
+        if ($tableID.find('tbody tr').length === 0) {
+
+            $('tbody').append(newTr);
+        } else {
+
+            $('tbody').append(newTr);
+        }
+
+    }
 });

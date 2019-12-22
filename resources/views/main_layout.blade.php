@@ -14,25 +14,27 @@
     <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    
+
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="shortcut icon" href="title.png">
     @show
 </head>
+
 <body style="background: url('main_bg.jpg') no-repeat center center fixed;
 -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!------------------------------------MENU BAR--------------------------->
     <div class="page-wrapper chiller-theme toggled">
         <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
             <i class="fas fa-bars"></i>
         </a>
-        <nav id="sidebar" class="sidebar-wrapper"  style="background-color:#343957">
+        <nav id="sidebar" class="sidebar-wrapper" style="background-color:#343957">
             <div class="sidebar-content">
                 <div class="sidebar-brand">
                     <a href="#">Menu</a>
@@ -46,7 +48,7 @@
                             <span>General</span>
                         </li>
                         <li class="sidebar">
-                            <a href="/home">
+                            <a href="/dashboard">
                                 <i class="fa fa-tachometer-alt"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -66,13 +68,10 @@
                                         <a href="/boutique/add/purchase">Add Purchases</a>
                                     </li>
                                     <li>
-                                        <a href="/boutique/view/purchase">View Purchases</a>
-                                    </li>
-                                    <li>
                                         <a href="/boutique/add/products">Add Products</a>
                                     </li>
                                     <li>
-                                        <a href="/boutique/view/reports">Boutique Reports</a>
+                                        <a href="/boutique/view/products">View Products</a>
                                     </li>
                                 </ul>
                             </div>
@@ -91,7 +90,7 @@
                                         <a href="/gym/view/member">View Member</a>
                                     </li>
                                     <li>
-                                        <a href="/gym/view/reports">Gym Reports</a>
+                                        <a href="/gym/notify/members">Notify Member</a>
                                     </li>
                                 </ul>
                             </div>
@@ -109,23 +108,30 @@
                                     <li>
                                         <a href="/parlor/view/bookings">View Bookings</a>
                                     </li>
-                                    <li>
-                                        <a href="/parlor/view/reports">Parlor Reports</a>
-                                    </li>
                                 </ul>
                             </div>
                         <li class="header-menu">
                             <span>Extra</span>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="#myModal2" data-toggle="modal" data-target="#myModal2">
                                 <i class="fas fa-allergies"></i>
                                 <span>Credits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="fas fa-cross"></i>
+                                <span>Logout</span>
                             </a>
                         </li>
 
                     </ul>
                 </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                 <!-- sidebar-menu  -->
             </div>
 
@@ -153,20 +159,55 @@
         <!------------Main Page-->
     </div>
 
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Scripting Language - Project Credits</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    1. Jumshaid Khan (FA17-BSE-004)
+                    <br>
+                    2. Syeda Shane Zahra (FA17-BSE-043)
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- page-wrapper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ asset('js/main_layout.js') }}"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
+    @yield('scriptFiles')
 
 
 
 </body>
 
 
-<script type="text/javascript" src="{{ asset('js/main_layout.js') }}"></script>
 
-@section('scriptFiles')
 
-@show
+
+
 </html>
+
+<!----
+<h5 class="text-center" style="font-family: Poppins, sans-serif;font-weight: bold;">
+                        <small style="font-family: Poppins, sans-serif;font-weight: bold;">Visited</small>
+                        24
+                    </h5>

@@ -6,7 +6,6 @@
 
 
 
-  <link rel="shortcut icon" href="title.png">
   <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +14,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <title>The Fashion House - Login</title>
+  
+  <link rel="shortcut icon" href="title.png">
 </head>
 
 <body style="background-image: url(log.jpg);">
@@ -75,7 +76,7 @@
         <br>
 
         <!----LOGIN FORM BEGINS HERE-->
-        <form class="form-signin" action="/home">
+        <form class="form-signin" action="/dashboard">
           <div class="form-label-group">
             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <label class="text-muted" for="inputEmail">Email address</label>
@@ -104,3 +105,4 @@
 </body>
 
 </html>
+
