@@ -48,7 +48,7 @@
                             <span>General</span>
                         </li>
                         <li class="sidebar">
-                            <a href="/dashboard">
+                            <a href="/">
                                 <i class="fa fa-tachometer-alt"></i>
                                 <span>Dashboard</span>
                             </a>
