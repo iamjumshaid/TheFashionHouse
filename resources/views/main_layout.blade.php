@@ -114,7 +114,7 @@
                             <span>Extra</span>
                         </li>
                         <li>
-                            <a href="#myModal2" data-toggle="modal" data-target="#myModal2">
+                            <a href="#creditsModal" data-toggle="modal" data-target="#creditsModal">
                                 <i class="fas fa-allergies"></i>
                                 <span>Credits</span>
                             </a>
@@ -160,31 +160,75 @@
     </div>
 
     <!-- The Modal -->
-    <div class="modal fade" id="myModal2">
-        <div class="modal-dialog">
-            <div class="modal-content">
+  <div class="modal fade" id="creditsModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Scripting Language - Project Credits</h4>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
+        <!-- Modal Header -->
+        <div class="modal-header bg-info darken-3 ">
+          <h4 class="modal-title" style="color:white"><strong>Scripting Language - Project Credits<strong></h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
 
-                <!-- Modal body -->
-                <div class="modal-body">
-                    1. Jumshaid Khan (FA17-BSE-004)
-                    <br>
-                    2. Syeda Shane Zahra (FA17-BSE-043)
-                </div>
+        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                </div>
+          <!-- Accordion card -->
+          <div class="card"style="">
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="headingOne1">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                <h5 class="mb-0">
+                  Made By <i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+              <div class="card-body">
+                <strong> 1- Jumshaid Khan (FA17-BSE-004) </strong> <img src="jumshaid.jpg" class="rounded-circle" alt="jumshaid" width="100" height="100">
+                <hr>
+                <strong>2- Syeda Shane Zahra (FA17-BSE-043)</strong> <img src="shane.jpg" class="rounded-circle" alt="shane" width="100" height="100">
+              </div>
+
 
             </div>
+            <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+              <!-- Accordion card -->
+              <div class="card">
+
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingTwo2">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                    <h5 class="mb-0">
+                      Special Thanks To <i class="fas fa-angle-down rotate-icon"></i>
+                    </h5>
+                  </a>
+                </div>
+
+                <!-- Card body -->
+                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
+                  <div class="card-body">
+                    <strong>1- Mr. Syed Haseeb </strong> <img src="haseeb.jpg" class="rounded-circle" alt="haseeb" width="100" height="100">
+                    <hr>
+                    <strong>2- Mr. Kashif </strong> <img src="kashif.jpg" class="rounded-circle" alt="kashif" width="100" height="100">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+
+          </div>
         </div>
-    </div>
+      </div>
+
+      <!-- page-wrapper -->
 
     <!-- page-wrapper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

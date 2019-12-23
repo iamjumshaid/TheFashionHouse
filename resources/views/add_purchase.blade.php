@@ -12,14 +12,15 @@
 <div class="container">
     @if(!empty($message))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-         {{$message}}
+        {{$message}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     @endif
     <div class="card">
-        <h3 class="text-info card-header text-center font-weight-bold text-uppercase py-4">Customer Receipt</h3>
+        <h3 style="text-align: center;font-family:Arial, Helvetica, sans-serif;
+                font-size: 1.3rem;" class="text-info card-header text-center font-weight-bold text-uppercase py-4">Customer Receipt</h3>
         <div class="card-body">
 
             <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i class="fas fa-plus-circle fa-1.5x" aria-hidden="true"> Add New Item</i></a></span>
@@ -93,9 +94,9 @@
                     <div class="col-sm-6">
                         <div class="input-group input-group-sm mb-3 half">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm" >Total Amount</span>
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Total Amount</span>
                             </div>
-                            <input id="amount_total" name="amount_total" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Total Amount" >
+                            <input id="amount_total" name="amount_total" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Total Amount">
 
                         </div>
                     </div>
@@ -108,7 +109,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Return Amount</span>
                             </div>
-                            <input id="amount_return" name="amount_return" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Return Amount" >
+                            <input id="amount_return" name="amount_return" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Return Amount">
 
                         </div>
                     </div>

@@ -15,7 +15,7 @@ class BookingsController extends Controller
       $booking->is_served= 0;
       $booking->amount_paid=$request->amount_paid;
       $booking->save();
-      return redirect()->back()->with('message','New appointment has been booked');
+      return redirect()->back()->with('message','New appointment has been booked!');
     }
 
     public function update(Request $request)
